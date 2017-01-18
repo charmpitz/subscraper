@@ -1,7 +1,7 @@
 # Subscraper
 Use this to download subtitles for movies/series.
 
-##### Installation
+##### Installation:
 ```
 pip install subscraper
 ```
@@ -10,9 +10,11 @@ pip install subscraper
 ```
 subscraper /path/to/the/movie/file.mkv
 ```
-A QT interface will open and now you can search and download the appropriate subtitle
+A QT interface will open and now you can search and download the appropriate subtitle.
 
 ### Install in Nemo context menu for Linux Mint
+This will only work if you are using Nemo. Right-clicking a video will give you the option to `Download subtitle`.
+
 ```
 # Download file
 wget https://raw.githubusercontent.com/charmpitz/subscraper/master/subscraper/download-subtitle.nemo_action
