@@ -3,9 +3,8 @@ Use this to download subtitles for movies/series.
 
 ##### Installation:
 ```
-sudo apt-get install python-pip python-dev libxext-dev python-qt4 qt4-dev-tools build-essential
-
-pip install subscraper
+sudo apt-get install python-pip python-qt4
+sudo pip install subscraper
 ```
 
 ##### Usage:
