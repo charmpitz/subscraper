@@ -1,13 +1,14 @@
 import requests
 import pycurl
 import tempfile
+import sys
+import os
 from zipfile import ZipFile
 from urllib import urlencode
 from bs4 import BeautifulSoup
 from shutil import copyfile
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
-import sys
 
 class SubScraper:
     directory = None
@@ -19,7 +20,7 @@ class SubScraper:
     searchPhrase = None
     selectedSubtitle = None
     results = []
-
+    
     def __init__(self, path):
         self.path = path
         self.parsePath()
@@ -53,6 +54,7 @@ class SubScraper:
         url = self.subsceneUrl + soup.select('div.download > a')[0].get('href')
         tmpZip = tempfile.mkstemp('scraper')
 
+        # Download archive 
         fp = open(tmpZip[1], "wb")
         curl = pycurl.Curl()
         curl.setopt(pycurl.URL, url)
@@ -62,15 +64,19 @@ class SubScraper:
         curl.close()
         fp.close()
         
+        # Unzip
         zip = ZipFile(tmpZip[1])
         subExt = zip.namelist()[0].rsplit('.', 1)[1];
         filename = self.path.rsplit('.', 1)[0]
         destination = filename + '.' + subExt
-
         data = zip.read(zip.namelist()[0])
+
+        # Save unzipped file
         fp = open(destination, "wb")
         fp.write(data);
         fp.close()
+        # Remove temporary file
+        os.remove(tmpZip[1])
 
     def showInterface(self):
         # App
