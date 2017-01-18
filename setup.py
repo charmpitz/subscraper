@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(name='subscraper',
 	scripts=['bin/subscraper'],
-	version='0.1',
+	version='0.4',
 	description='Movies/Series Subtitle Downloader',
 	url='http://github.com/charmpitz/subscraper',
 	author='Andrei Pit',
