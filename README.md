@@ -4,7 +4,7 @@ Use this to download subtitles for movies/series.
 ##### Installation:
 ```
 sudo apt-get install python-pip python-qt4
-sudo pip install subscraper
+sudo pip install bs4 requests subscraper
 ```
 
 ##### Usage:
@@ -17,12 +17,6 @@ A QT interface will open and now you can search and download the appropriate sub
 This will only work if you are using Nemo. Right-clicking a video will give you the option to `Download subtitle`.
 
 ```
-# Download file
-wget https://raw.githubusercontent.com/charmpitz/subscraper/master/subscraper/download-subtitle.nemo_action
-
-# Move file into ~/.local/share/nemo/actions
-mv download-subtitle.nemo_action ~/.local/share/nemo/actions
-
-# Then restart Nemo:
-nemo --quit
+# Download file and restart Nemo
+wget -N https://raw.githubusercontent.com/charmpitz/subscraper/master/subscraper/download-subtitle.nemo_action -P ~/.local/share/nemo/actions/ && nemo --quit
 ```
