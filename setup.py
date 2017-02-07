@@ -8,5 +8,5 @@ setup(name='subscraper',
 	author='Andrei Pit',
 	author_email='charmpitz@gmail.com',
 	license='MIT',
-	packages=['subscraper', 'requests', 'pycurl', 'bs4'],
+	packages=['subscraper'],
 	zip_safe=False)
